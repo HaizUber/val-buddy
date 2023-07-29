@@ -1,0 +1,199 @@
+/* CSS works from up to the bottom, The bottom code or the last line will alsways be the 
+output. Classes have bigger priority than the element selector*. ID has the highest priority
+greatest priority belongs to the styles element in html !important is the most important*/
+
+/* Period is for selecting a class*/
+/* nav */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  nav {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 7.5vh;
+    background-color: rgb(34, 42, 65);
+    text-decoration: none;
+    width: 100%;
+    top: 0%;
+    position: fixed;
+  }
+  #logo {
+    margin-left: 1rem;
+    font-size: 3.5rem;
+    color: rgb(231, 231, 231);
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: space-around;
+    font-size: 2.2rem;
+    width: 60%;
+  }
+  
+  .nav-links li {
+    list-style: none;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: rgb(233, 232, 232);
+  }
+  
+  body {
+    background-color: rgb(25, 25, 44);
+  }
+  
+  .burger {
+    display: none;
+  }
+  
+  .burger div {
+    width: 25px;
+    height: 2px;
+    background-color: rgb(233, 232, 232);
+    margin: 5px;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .nav-links {
+      width: 60%;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    body {
+      overflow-x: hidden;
+    }
+    .nav-links {
+      position: absolute;
+      right: 0px;
+      height: 92vh;
+      top: 7vh;
+      display: flex;
+      background-color: rgb(34, 42, 65);
+      flex-direction: column;
+      align-items: center;
+      width: 30%;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+    }
+  
+    .burger {
+      display: block;
+      cursor: pointer;
+    }
+  }
+  
+  .nav-active {
+    transform: translateX(0%);
+  }
+  .home {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    transform: translate (-50%, -50%);
+    -ms-transform: transalte (-50%, -50%);
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  /***************************************************************
+  
+  
+  
+  /***************************************************************
+  /* bank */
+  /* Parent Container */
+  .bank{
+    position: relative;
+    width: 10rem;
+    top: 12rem;
+    left: 10rem;
+   }
+   
+   /* Child Text Container */
+   .bank div{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: black;
+    color: white;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: visibility 0s, opacity 0.5s linear; 
+    transition: visibility 0s, opacity 0.5s linear;
+   }
+   
+   /* Hover on Parent Container */
+   .bank:hover{
+    cursor: pointer;
+   }
+   
+   .bank:hover div{
+    width: 150px;
+    padding: 8px 15px;
+    visibility: visible;
+    opacity: 0.7; 
+   }
+  /************************************************************************************
+  
+  
+  /***************************************************************
+  /* border */
+  .border {
+    position: relative;
+    width: 20rem;
+    top: -1.5rem;
+    left: 35rem;
+    border-bottom: 2rem solid #555;
+    overflow: hidden;
+  }
+  
+  /* Make the image responsive */
+  .border img {
+    width: 100%;
+    height: auto;
+    transition: 2s ease-out;
+  }
+  
+  /* hover over */
+  
+  .border:hover {
+    border-color: rgb(98, 96, 151);
+    transform: scale(1.5);
+    transition: transform .5s ease;
+  }
+  
+  .border img:hover {
+    height: 125%;
+    
+  }
+  /************************************************************************************
+
+          /* Slideshow styles */
+          .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+        
+        .slide {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: auto;
+        }
