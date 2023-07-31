@@ -8,9 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-1nRniuLCZopli7jVLnJ4zNOw3DYIlXaG71rFhFyHUsCnEJU0EKOM6/48VlDr0I9bwn/klGRhSO65OjfULxAMw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0f4d2cc005.js" crossorigin="anonymous"></script>
     <style>
-
-        
         * {
             margin: 0;
             padding: 0;
@@ -37,6 +36,7 @@
             background: linear-gradient(to right, #dd1818, #333333);
             z-index: 1;
             opacity: 0.9;
+            animation: fadeInNavMenu 1s ease-in-out forwards;
         }
 
         #logo {
@@ -62,10 +62,16 @@
             color: #e9e8e8;
             padding: 1rem;
             border-radius: 4px;
+            /* Add transition for smooth animation on hover */
+            transition: transform 0.2s ease-out;
         }
 
         .nav-links a:hover {
-            background-color: rgba(233, 232, 232, 0.1);
+            /* Add animation on hover */
+            transform: scale(1.1);
+            /* Add any other visual effects you desire */
+            /* For example, changing the background color */
+            background-color: rgba(233, 232, 232, 0.2);
         }
 
         .burger {
@@ -191,46 +197,65 @@
         }
 
         footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #333333;
-    height: 100px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333333;
+            height: 100px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            animation: fadeInFooter 1s ease-in-out forwards;
+        }
 
-.footer-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    
-}
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
 
-.social-icons {
-    display: flex;
-    align-items: center;
-    z-index: 9999; /* Set a high z-index value to move the footer above other elements */
-}
+        .social-icons {
+            display: flex;
+            align-items: center;
+            z-index: 9999; /* Set a high z-index value to move the footer above other elements */
+        }
 
-.social-icons a {
-    color: rgb(226, 226, 226);
-    font-size: 24px;
-    margin: 0 10px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-.social-icons a:hover {
-    color: rgba(233, 232, 232, 0.7);
-}
+        .social-icons a {
+            color: rgb(226, 226, 226);
+            font-size: 24px;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: rgba(233, 232, 232, 0.7);
+        }
 
         @keyframes fadeIn {
             0% { opacity: 0; }
             100% { opacity: 1; }
+        }
+
+        /* New styles for animations */
+        /* Animation for nav menu on load */
+        @keyframes fadeInNavMenu {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Animation for burger menu on load */
+        @keyframes fadeInBurgerMenu {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Animation for footer on load */
+        @keyframes fadeInFooter {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -334,6 +359,15 @@
                 handleIndicatorClick(i);
             });
         }
+
+        // Additional script for animating nav menu and footer
+        // Add class to nav menu to trigger animation
+        const navMenu = document.querySelector('nav');
+        navMenu.classList.add('animate-nav-menu');
+
+        // Add class to footer to trigger animation
+        const footer = document.querySelector('footer');
+        footer.classList.add('animate-footer');
     </script>
 </body>
 </html>
