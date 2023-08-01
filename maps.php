@@ -24,6 +24,7 @@
             background-color: #19192c;
             font-family: "Poppins", sans-serif;
             font-size: 1.6rem;
+            padding-bottom: 75px;
         }
 
         nav {
@@ -231,70 +232,119 @@
     display: flex;
   }
 
-  /* Additional styles for footer */
+ 
   footer {
     justify-content: space-between;
     padding: 1rem;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
   }
 }
 
 
 /* map cards */
 maincard {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          padding-top: 120px;
+          min-height: 100vh;
+          background-color: #f0f0f0;
+          overflow-y: auto;
+        }
+
+        .card-container {
+          display: flex;
+          justify-content: space-between;
+          max-width: 1200px;
+          margin: 0 auto;
+          flex-wrap: wrap;
+        }
+
+        .card {
+          width: calc(90.33% - 20px); /* Each card takes up 33.33% of the container with a small gap of 20px between them */
+          margin-bottom: 20px; /* Add some space between rows */
+          background-color: #fff;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          border-radius: 8px;
+          overflow: hidden;
+          transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .card img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+        }
+
+        .card-content {
+          padding: 20px;
+        }
+
+        .card h2 {
+          font-size: 1.8rem;
+          margin-bottom: 10px;
+        }
+
+        .card p {
+          font-size: 1.6rem;
+          color: #555;
+        }
+
+        .card-link {
+          display: block;
+          text-decoration: none;
+          color: inherit;
+        }
+
+        /* Hover animation for cards */
+        .card-link:hover .card {
+          transform: scale(1.03);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+/* Additional styles for footer */
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 100px; /* Add some padding to separate the cards from the navigation bar */
-  min-height: 80vh; /* Set a minimum height to ensure the cards are visible on small screens */
-  
-}
-
-.card-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 80%;
-}
-
-.card {
-  width: 300px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.card img {
+  background-color: #333333;
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: 200px;
-  object-fit: cover;
 }
 
-.card-content {
-  padding: 20px;
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-.card h2 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+.social-icons {
+  display: flex;
+  align-items: center;
+  z-index: 9999;
 }
 
-.card p {
-  font-size: 1.6rem;
-  color: #555;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Add the following styles for card animations */
-.card-link {
-  display: block;
+.social-icons a {
+  color: #e2e2e2;
+  font-size: 24px;
+  margin: 0 10px;
   text-decoration: none;
-  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: rgba(233, 232, 232, 0.7);
 }
 
     </style>
@@ -346,6 +396,72 @@ maincard {
           <h2>Split</h2>
           <p>Nihonjin.</p>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-link" onclick="window.location.href='page4.html';">
+    
+    <div class="card">
+      <img src="images/ascent.jpg" alt="Card Image 4">
+      <div class="card-content">
+        <h2>Haven</h2>
+        <p>Bing chillin.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-link" onclick="window.location.href='page5.html';">
+    
+    <div class="card">
+      <img src="images/ascent.jpg" alt="Card Image 5">
+      <div class="card-content">
+        <h2>Breeze</h2>
+        <p>Aloha.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-link" onclick="window.location.href='page6.html';">
+    
+    <div class="card">
+      <img src="images/ascent.jpg" alt="Card Image 6">
+      <div class="card-content">
+        <h2>Fracture</h2>
+        <p>Ziplines.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-link" onclick="window.location.href='page7.html';">
+    
+    <div class="card">
+      <img src="images/ascent.jpg" alt="Card Image 7">
+      <div class="card-content">
+        <h2>Pearl</h2>
+        <p>Yeaaa.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-link" onclick="window.location.href='page8.html';">
+    
+    <div class="card">
+      <img src="images/ascent.jpg" alt="Card Image 8">
+      <div class="card-content">
+        <h2>Lotus</h2>
+        <p>No.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-link" onclick="window.location.href='page9.html';">
+    
+    <div class="card">
+      <img src="images/ascent.jpg" alt="Card Image 9">
+      <div class="card-content">
+        <h2>Icebox</h2>
+        <p>brrrrr.</p>
       </div>
     </div>
   </div>
